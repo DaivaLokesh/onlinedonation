@@ -1,0 +1,49 @@
+{% extends 'donarhome.html' %}
+{% block 'body' %}
+<h3 align="center" style="color:green" >{{msg}}</h3>
+<h3 align="center" ><u>view Users</u></h3>
+<br>
+<br>
+
+<form method="post" action="{% url 'displaydonaruser' %}">
+    {% csrf_token %}
+    <table align="center" width="30%" height="30%">
+
+
+        <tr align="center">
+            <td><label>Select Category</label></td>
+            <td>
+                <select name="dept" required>
+                    <option value="">---select---</option>
+                    <option value="NGO">NGO</option>
+                    <option value="ORPHANAGE">OLDAGE HOME</option>
+                    <option value="OLDAGEHOME">ORPHANGE</option>
+
+                </select>
+            </td>
+            </tr>
+            <tr align="center">
+                <td>
+                    <label>Select State</label>
+                </td>
+            <td>
+                <select name="state" required >
+                    <option value="">---select---</option>
+                    <option value="ANDHRAPRADESH">ANDHRAPRADESH</option>
+                    <option value="TELENGANA">TELENGANA</option>
+                    <option value="OTHERS">OTHERS</option>
+
+                </select>
+            </td>
+        </tr>
+
+
+        <tr align="center">
+            <td><input type="submit" value="View" class="userbutton"></td>
+            <td><input type="reset" value="Clear" class="userbutton"></td>
+        </tr>
+    </table>
+
+</form>
+
+{% endblock %}

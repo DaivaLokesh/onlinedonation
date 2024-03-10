@@ -1,0 +1,73 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div style="background-color:lightgray">
+
+<h2 align="center" style="color:red">{{message}}</h2>
+<h3 align="center"><u>Admin Login</u></h3>
+<br>
+<center>
+<form method="post" action="{% url 'checkadminlogin' %}">
+    {% csrf_token %}
+    <table align="center" width="30%" height="25%">
+       <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <tr>
+            <td>
+            <label style="font-size:200%">Enter Username:</label>
+            </td>
+            <td>
+                <input type="text" name="uname" required style="height: 40px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            <label style="font-size:200%">Enter Password</label>
+            </td>
+            <td>
+                <input type="password" name="pwd" required style="height: 40px;" />
+            </td>
+        <tr>
+        <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" value="Login" class="Button">LOGIN</button>
+            </td>
+            <td>
+                <button type="reset" value="Clear" class="Button" >CLEAR</button>
+            </td>
+        </tr>
+    </table>
+</form>
+    </center>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+</div>
+{% endblock %}

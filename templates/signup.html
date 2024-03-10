@@ -1,0 +1,69 @@
+{% extends 'index.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<head>
+
+    <title>Signup Form</title>
+</head>
+<div style="background-color:lightgray">
+
+    <h1 align="center">Signup Form</h1>
+<!--    <form method="post">-->
+<!--        {% csrf_token %}-->
+<!--        {{ form|crispy }}<br>-->
+<!--        <button type="submit"  class="button">Signup</button>-->
+<!--    </form>-->
+<!--    <img src="{% static 'images/image8.jpg' %}"/>-->
+    <form method="post">
+    {% csrf_token %}
+
+      <div class="form-group col-md-6 mb-0">
+          <labe>Enter Fullname</labe>
+        {{ form.fullname }}
+      </div>
+      <div class="form-group col-md-6 mb-0">
+          <labe>Enter email</labe>
+        {{ form.email }}
+      </div>
+        <div class="form-group col-md-6 mb-0">
+        <label>Enter password</label>
+    {{ form.password }}
+        </div>
+        <div class="form-group col-md-6 mb-0">
+        <label>Enter address</label>
+    {{ form.address }}
+        </div>
+      <div class="form-group col-md-6 mb-0">
+          <label>Enter State</label>
+        {{ form.state }}
+      </div>
+      <div class="form-group col-md-4 mb-0">
+          <label>Enter region</label>
+        {{ form.region }}
+      </div>
+      <div class="form-group col-md-2 mb-0">
+          <label>Enter Contact</label>
+        {{ form.contact}}
+      </div>
+        <div class="form-group col-md-2 mb-0">
+            <label>Select Gender</label>
+        {{ form.gender }}
+      </div>
+
+    {{ form.check_me_out}}
+        <br>
+        <br>
+<div align="center">
+    <button type="submit" class="btn btn-primary" >Sign in</button>
+    </div>
+  </form>
+    <br>
+    <br>
+    <br>
+
+</div>
+
+</body>
+
+{% endblock %}

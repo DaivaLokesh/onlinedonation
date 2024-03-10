@@ -1,0 +1,86 @@
+{% extends 'donarhome.html' %}
+{% block 'body' %}
+{% load static %}
+<h3 align="center">
+   <u>view  Users</u>
+</h3>
+
+<input class="form-control" id="myInput" type="text" placeholder="Department"><br>
+
+<!--<table align="center" border="2" width="50%" height="20%" class="table table-bordered table-striped">-->
+<!--    <thead>-->
+<!--    <tr bgcolor="blue">-->
+<!--        <td>Fullname</td>-->
+<!--        <td>Address</td>-->
+<!--        <td>State</td>-->
+<!--        <td>Region</td>-->
+<!--        <td>Email</td>-->
+<!--        <td>Contact</td>-->
+<!--        <td></td>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--     <tbody id="myTable">-->
+<!--    {%for user in users %}-->
+
+<!--    <tr>-->
+<!--        <td>{{user.fullname}}</td>-->
+<!--        <td>{{user.address}}</td>-->
+<!--        <td>{{user.state}}</td>-->
+<!--        <td>{{user.region}}</td>-->
+<!--        <td>{{user.email}}</td>-->
+<!--        <td>{{user.contact}}</td>-->
+<!--        <td>-->
+<!--            <a href="/donardeletion/{{donar.id}}">Donate</a>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    {% endfor %}-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<!--<div class="card-deck">-->
+<!--<div class="card" align="center">-->
+<!--     <img class="card-img" src="{% static 'images/profile.jpeg' %}" alt="Card image" height="20%">-->
+<!--    <h4 class="card-title">{{user.fullname}}</h4>-->
+<!--    <h4 class="card-text">{{user.address}}</h4>-->
+<!--    <h4>{{user.state}}</h4>-->
+<!--      <h4>{{user.region}}</h4>-->
+<!--      <h4>{{user.email}}</h4>-->
+<!--      <h4>{{user.contact}}</h4>-->
+<!--     <button type="button" class="btn btn-success">Donate</button>-->
+<!-- </div>-->
+<!-- </div>-->
+<div class="row">
+{%for user in users %}
+<div class="card border-success mb-4" style="max-width: 80rem;display:flex;margin-left:300px">
+  <div class="card-header bg-transparent border-success" align="left">{{user.dept}}
+  <img class="card-img-top" src="{% static 'images/profile.jpeg' %}" alt="Card image cap">
+  </div>
+<div class="card-header bg-transparent border-success" style="margin-left:330px " align="right" >
+     <h4 class="card-title">{{user.fullname}}</h4>
+     <h4 >{{user.address}}</h4>
+     <h4>{{user.state}}</h4>
+     <h4>{{user.region}}</h4>
+     <h4>{{user.email}}</h4>
+     <h4>{{user.contact}}</h4>
+  <div class="card-footer border-success">
+     <a href="{% url 'donardonations' %}" >Donate</a>
+  </div>
+    </div>
+</div>
+    <br>
+    <br>
+
+{% endfor %}
+</div>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+{% endblock %}

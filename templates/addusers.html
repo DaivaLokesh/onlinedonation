@@ -1,0 +1,72 @@
+{% extends 'adminhome.html' %}
+{% block 'body' %}
+<h3 align="center" style="color:green" >{{msg}}</h3>
+<h3 align="center" ><u>Add User</u></h3>
+<br>
+<br>
+
+<form method="post" action="{%url 'insertuser' %}">
+    {% csrf_token %}
+    <table align="center" width="40%" height="50%">
+        <tr align="center">
+            <td>
+                <label> Enter user id</label>
+            </td>
+            <td><input type="text" name="id" required></td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter Full Name</label></td>
+            <td><input type="text" name="fname"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter address</label></td>
+            <td><input type="text" name="address"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Select Department</label></td>
+            <td>
+                <select name="dept" required>
+                    <option value="">---select---</option>
+                    <option value="NGO">NGO</option>
+                    <option value="ORPHANAGE">OLDAGE HOME</option>
+                    <option value="OLDAGEHOME">ORPHANGE</option>
+
+                </select>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter State</label></td>
+            <td><input type="text" name="state"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter region</label></td>
+            <td><input type="text" name="region"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter password</label></td>
+            <td><input type="pass" name="pas"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter Email</label></td>
+            <td><input type="text" name="email"  required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><label>Enter contact</label></td>
+            <td><input type="text" name="contact" min="10" max="11" required>
+            </td>
+        </tr>
+        <tr align="center">
+            <td><input type="submit" value="Add" class="userbutton"></td>
+            <td><input type="reset" value="Clear" class="userbutton"></td>
+        </tr>
+    </table>
+
+</form>
+
+{% endblock %}

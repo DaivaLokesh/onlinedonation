@@ -1,0 +1,54 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SDP PROJECT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link text="text/css"   rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+    a{
+    color:white
+    }
+</style>
+
+<body >
+<h2 align="center">Online donation management system</h2>
+<br>
+<div style="background-color:purple;padding:20px;font-size:20ft">
+<a href="{% url 'userhome' %}">Home</a>&nbsp;&nbsp;&nbsp;&nbsp
+<a href="{% url 'userchangepwd' %}">Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<a href="{% url 'viewdonations' %}">view Donations</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<a href="{% url 'feedback' %}">Feedback</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+<a href="{% url 'userlogin' %}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</div>
+<h3 align="right" style="color: green"><i>Welcome {{useremail}}</i></h3>
+
+{% block body %}
+<div class="card border-success mb-4" style="max-width: 80rem;display:flex;margin-left:40px">
+  <div class="card-header bg-transparent border-success" align="left">
+  <img class="card-img-top" src="{% static 'images/profile.jpeg' %}" alt="Card image cap">
+  </div>
+ <style>
+    a {
+    color: white;
+    }
+</style>
+<div class="card-header bg-transparent border-success" style="margin-left:330px " align="right" >
+     <h4 class="card-title">{{useremail}}</h4>
+     <h4 >{{useraddress}}</h4>
+     <h4>{{user.state}}</h4>
+     <h4>{{user.region}}</h4>
+     <h4>{{user.email}}</h4>
+     <h4>{{user.contact}}</h4>
+    </div>
+</div>
+</center>
+{% endblock %}
+</body>
+</html>

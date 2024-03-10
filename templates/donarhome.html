@@ -1,0 +1,48 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Donor</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link text="text/css"   rel="stylesheet" href="{% static 'css/adminstyle.css' %}">
+    <link text="text/css"   rel="stylesheet" href="{% static 'css/donarstyle.css' %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body >
+<style>
+    a {
+    color: white;
+    }
+</style>
+<br>
+<div style="background-color:orange;padding:20px;font-size:20px">
+<a href="{% url 'donorhome' %}">Profile</a>&nbsp;&nbsp;&nbsp;&nbsp
+<a href="{% url 'donarchangepwd' %}">Change Password</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'donaruser' %}">view users</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{% url 'donarlogin' %}">Logout</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
+<br>
+<h3 align="right" style="color: green"><i>Welcome {{donar.email}}</i></h3>
+
+{% block 'body' %}
+<center>
+<div class="card border-success mb-4" style="max-width: 80rem;display:flex;margin-left:40px">
+  <div class="card-header bg-transparent border-success" align="left">
+  <img class="card-img-top" src="{% static 'images/profile.jpeg' %}" alt="Card image cap">
+  </div>
+<div class="card-header bg-transparent border-success" style="margin-left:330px " align="right" >
+     <h4 class="card-title">{{donar.fullname}}</h4>
+     <h4 >{{donar.address}}</h4>
+     <h4>{{donar.state}}</h4>
+     <h4>{{donar.region}}</h4>
+     <h4>{{donar.email}}</h4>
+     <h4>{{donar.contact}}</h4>
+    </div>
+</div>
+</center>
+
+{% endblock %}
+</body>
+</html>

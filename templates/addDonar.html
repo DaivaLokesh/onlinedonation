@@ -1,0 +1,16 @@
+{% extends 'adminhome.html' %}
+
+{% block 'body' %}
+
+<h2 align="center" style="color:green">{{msg}}</h2>
+<h3 align="center"><u> Add Donar </u></h3>
+<center>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Add" class="donarbutton">
+    <input type="reset" value="clear" class="donarbutton">
+</form>
+</center>
+
+{% endblock %}

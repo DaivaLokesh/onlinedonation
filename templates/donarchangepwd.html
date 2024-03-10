@@ -1,0 +1,43 @@
+{% extends 'donarhome.html' %}
+{% block 'body' %}
+<h2 align="center" style="color:red">{{message}}</h2>
+<h3 align="center"><u>Change password</u></h3>
+<br>
+<center>
+<form method="POST" action="{% url 'donarupdatepwd'%}">
+    {% csrf_token %}
+    <table align="center" width="40%" height="30%">
+
+        <tr>
+            <td>
+            <label>Enter Old Password</label>
+            </td>
+            <td>
+                <input type="password" name="opwd" required/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <label>Enter New Password</label>
+            </td>
+            <td>
+                <input type="password" name="npwd" required/>
+            </td>
+        <tr>
+        <td></td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" value="Login" class="Button">UPDATE</button>
+            </td>
+            <td>
+                <button type="reset" value="Clear" class="Button" >CLEAR</button>
+            </td>
+        </tr>
+    </table>
+</form>
+    </center>
+{% endblock %}
